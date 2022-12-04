@@ -1,0 +1,11 @@
+Algorith NQueens
+ input - An N*N Chess board 
+ output : 1) Print a possible configuration to place all queens 2) Count all possible combinations of placing the queens
+ 
+ STEP 1 : Place the first queen in the first row, this will take O(1) time initially (parent  step) as there will be no collisions at start.
+ STEP 2 : Place the second queen in second row, but make sure that queen does not collide with any other
+ STEP 3 : Recursively, add queens as STEP 2. 
+ STEP 4: In any case when queens collide, just progress the tile and move to the next tile.( Here, we are assuming the condition of backtracking that we will find a feasible solution for the subproblems)
+ STEP 5: In any case if configuration looks inpossible, then return back to the parent and BLAME the parent.
+ STEP 6: After blaming the parent, now its time to change the parent.
+ STEP 7: Repeat from 1 till you reach a leaf node
