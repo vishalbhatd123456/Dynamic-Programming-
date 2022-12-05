@@ -1,0 +1,22 @@
+This is the Maths behind converting a 2D dp problem into a 1D dp problem : 
+
+STEP 1:
+
+STATE : dp(i,j), i represents the total houses that can be robbed in the lane, j represents the condition of the house
+
+j = 0 : The current house is not robbed
+j = 1 : The current house is robbed
+
+dp(i,0) : Best answer w/o robbing the current house
+dp(i,1) : Best answer with robbing the current house
+
+max(dp(i,0), dp(i,1)) -> final ans
+
+dp(i,0) -> max(dp(i+1,1),dp(i+1,0))
+dp(i+1,0) -> max(dp(i+2,0), dp(i+2,1))
+
+just considering the dp(i):
+
+dp(i) -> max(dp(i,0),dp(i,1))
+
+dp(i) -> max(dp(i+1), dp(i+2)+nums[i]);
